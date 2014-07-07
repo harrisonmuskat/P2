@@ -37,12 +37,16 @@ if(isset($num_Words)){
 	}
 }
 
-if (array_key_exists('number', $_POST) && $_POST['number'] == 'on') {
+if (array_key_exists('number', $_POST)) {
 	$pw .= rand(0,20);
 }
 
-if (array_key_exists('symbol', $_POST) && $_POST['symbol'] == 'on') {
+if (array_key_exists('symbol', $_POST)) {
 	$pw .= $symbol[rand(0,14)];
+}
+
+if (array_key_exists('uppercase', $_POST)) {
+	$pw = ucfirst($pw);
 }
 
 echo $pw;
