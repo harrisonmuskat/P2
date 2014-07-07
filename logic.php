@@ -12,15 +12,16 @@ for ($i = 0; $i < 5000; $i++) {
 	$wordlist[0][$i] = strip_tags($wordlist[0][$i]);
 }
 
+// Initializes an array of symbols and strips out the numbers
 $symbol = range('!','@');
 $symbol = (array_merge(array_splice($symbol, 0, 15), array_splice($symbol, 25, 7)));
-//print_r($symbol);
 
-// Initializes $num_Words as the user's requested number of words
+// Initializes $num_Words as the user's requested number of words after checking to see if the user has submitted anything
 if (!empty($_POST['words'])){
 	$num_Words = $_POST['words'];
 }
 else {
+	// Default value so user sees an initial password upon visiting the page
 	$num_Words = 4;
 }
 
@@ -34,20 +35,30 @@ for($i = 0; $i < $num_Words; $i++){
 		$pw .= $wordlist[0][rand(0,4999)];
 	}
 	else {
-		$pw .= '-'.$wordlist[0][rand(0,4999)];
+		$pw .= ' '.$wordlist[0][rand(0,4999)];
 	}
 }
 
+//Checks if user wants a number (up to 9)
 if (array_key_exists('number', $_POST)) {
-	$pw .= rand(0,20);
+	for ($i = 0; $i < $_POST['number']; $i++){
+		$pw = substr_replace($pw, rand(0,9), rand(0,strlen($pw)), 0);
+	}
 }
 
+//Checks if user wants any number of symbols up to 9
 if (array_key_exists('symbol', $_POST)) {
-	$pw .= $symbol[rand(0,14)];
+	for ($i = 0; $i < $_POST['symbol']; $i++){
+		$pw = substr_replace($pw, $symbol[rand(0,14)], rand(0,strlen($pw)), 0);
+	}
 }
 
+//Checks if user wants first letter capitalized
 if (array_key_exists('uppercase', $_POST)) {
 	$pw = ucfirst($pw);
 }
 
+if (array_key_exists('camelcase', $_POST)) {
+	$pw = ucwords($pw);
+}
 ?>
