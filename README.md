@@ -1,8 +1,8 @@
 #README.md
 
 ##Live URL
-p2.harrisonmuskat.me
-pwdgen-harrison.gopagoda.com
+<http://p2.harrisonmuskat.me>
+<http://pwdgen-harrison.gopagoda.com>
 
 ##Description
 This application generates basic xkcd-inspired passwords and also allows users to select from a variety of customizations.
