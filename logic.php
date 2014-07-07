@@ -17,23 +17,24 @@ $symbol = (array_merge(array_splice($symbol, 0, 15), array_splice($symbol, 25, 7
 //print_r($symbol);
 
 // Initializes $num_Words as the user's requested number of words
-if (array_key_exists('words', $_POST)){
+if (!empty($_POST['words'])){
 	$num_Words = $_POST['words'];
+}
+else {
+	$num_Words = 4;
 }
 
 // Initializes $pw as an empty string
 $pw = '';
 
 // Loops through $wordlist the number of times the user requested a word
-if(isset($num_Words)){
-	for($i = 0; $i < $num_Words; $i++){
-		// Adds a randomly selected word from $wordlist to $pw
-		if ($i == 0) {
-			$pw .= $wordlist[0][rand(0,4999)];
-		}
-		else {
-			$pw .= '-'.$wordlist[0][rand(0,4999)];
-		}
+for($i = 0; $i < $num_Words; $i++){
+	// Adds a randomly selected word from $wordlist to $pw
+	if ($i == 0) {
+		$pw .= $wordlist[0][rand(0,4999)];
+	}
+	else {
+		$pw .= '-'.$wordlist[0][rand(0,4999)];
 	}
 }
 
@@ -49,5 +50,4 @@ if (array_key_exists('uppercase', $_POST)) {
 	$pw = ucfirst($pw);
 }
 
-echo $pw;
 ?>
