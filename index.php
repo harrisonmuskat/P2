@@ -32,31 +32,33 @@
 			<br>
 		</div>
 
-		<div class = 'col-md-6 col-md-offset-3 text-center'>
-			<p>
-				<form method = 'POST' action = 'index.php'>
-					<label for='words'>How Many Words?</label>
-						<input class = 'input-sm input-width input' type='text' name='words' id='words' maxlength = 1 value=''> 
-						<label for = 'words'>(Max. 9)</label> <br>
+		<p>
+			<div class = 'col-md-6 col-md-offset-3 text-center'>
+				
+					<form method = 'POST' action = 'index.php'>
+						<label for='words'>How Many Words?</label>
+							<input class = 'input-sm input-width input' type='text' name='words' id='words' maxlength = 1 value=''> 
+							<label for = 'words'>(Max. 9)</label> <br>
 
-					<label for='number'>How Many Numbers?</label>
-						<input class = 'input-sm input-width input' type='text' name='number' id='number' maxlength = 1 value=''> 
-						<label for = 'number'>(Max. 9)</label> <br>
+						<label for='number'>How Many Numbers?</label>
+							<input class = 'input-sm input-width input' type='text' name='number' id='number' maxlength = 1 value=''> 
+							<label for = 'number'>(Max. 9)</label> <br>
 
-					<label for='symbol'>How Many Symbols?</label>
-						<input class = 'input-sm input-width input' type='text' name='symbol' id='symbol' maxlength = 1 value=''> 
-						<label for = 'symbol'>(Max. 9)</label> <br>
+						<label for='symbol'>How Many Symbols?</label>
+							<input class = 'input-sm input-width input' type='text' name='symbol' id='symbol' maxlength = 1 value=''> 
+							<label for = 'symbol'>(Max. 9)</label> <br>
 
-					<label for='uppercase'>Capitalize first letter?</label>
-						<input type = 'checkbox' name = 'uppercase' id = 'uppercase'> <br>
+						<label for='uppercase'>Capitalize first letter?</label>
+							<input type = 'checkbox' name = 'uppercase' id = 'uppercase'> <br>
 
-					<label for='camelcase'>CamelCase?</label>
-						<input type = 'checkbox' name = 'camelcase' id = 'camelcase'> <br><br>
+						<label for='camelcase'>CamelCase?</label>
+							<input type = 'checkbox' name = 'camelcase' id = 'camelcase'> <br><br>
 
-					<input type='submit' class='btn btn-primary btn-lg' value='Generate Password'>
-				</form>
-			</p>
-		</div>
+						<input type='submit' class='btn btn-primary btn-lg' value='Generate Password'>
+					</form>
+				
+			</div>
+		</p>
 	</div>
 
 	<div class = 'row'>
